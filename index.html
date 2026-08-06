@@ -1,243 +1,778 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jihee Han | Clinical Epidemiology</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jihee Han, PhD — clinical epidemiologist and thrombosis researcher at Leiden University Medical Center.">
+  <title>Jihee Han, PhD | Clinical Epidemiology</title>
 
   <style>
+    :root {
+      --ink: #172433;
+      --muted: #5c6875;
+      --line: #dce5e7;
+      --paper: #fffefb;
+      --canvas: #f2f6f5;
+      --navy: #183d57;
+      --teal: #0d766d;
+      --mint: #cdebe5;
+      --sun: #e8b44d;
+      --shadow: 0 16px 38px rgba(23, 36, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-      color: #222;
-      background-color: #f7f8fa;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
-    header {
-      background-color: #1f3a5f;
+    a {
+      color: var(--teal);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--navy);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--sun);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -4rem;
+      left: 1rem;
+      z-index: 10;
+      padding: 0.7rem 1rem;
       color: white;
-      padding: 70px 20px;
-      text-align: center;
+      background: var(--navy);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 42px;
+    .skip-link:focus {
+      top: 1rem;
     }
 
-    header p {
-      margin-top: 12px;
-      font-size: 19px;
+    .site-header {
+      color: white;
+      background: var(--navy);
+      overflow: hidden;
     }
 
-    nav {
-      background-color: white;
-      text-align: center;
-      padding: 15px;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
+    .header-inner {
+      position: relative;
+      width: min(1120px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 1.1rem 0 6.5rem;
     }
 
-    nav a {
-      color: #1f3a5f;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+    .header-inner::after {
+      position: absolute;
+      right: -9rem;
+      bottom: -12rem;
+      width: 27rem;
+      height: 27rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2.5rem rgba(205, 235, 229, 0.1), 0 0 0 6rem rgba(205, 235, 229, 0.05);
+      content: "";
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 25px;
-    }
-
-    section {
-      background-color: white;
-      margin-bottom: 30px;
-      padding: 35px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-    }
-
-    h2 {
-      color: #1f3a5f;
-      border-bottom: 2px solid #e4e7eb;
-      padding-bottom: 10px;
-    }
-
-    .profile {
+    .topbar {
       display: flex;
       align-items: center;
-      gap: 30px;
+      justify-content: space-between;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .profile img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
+    .monogram {
+      margin: 0;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .topbar nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.9rem 1.25rem;
+    }
+
+    .topbar nav a {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .topbar nav a:hover {
+      color: white;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 735px;
+      padding-top: 6.7rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin-bottom: 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      font-weight: 400;
+      letter-spacing: -0.06em;
+      line-height: 0.96;
+    }
+
+    .hero-summary {
+      max-width: 610px;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
     }
 
     .button {
-      display: inline-block;
-      background-color: #1f3a5f;
-      color: white;
-      padding: 10px 18px;
-      margin-top: 10px;
-      margin-right: 8px;
-      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.78rem 1.1rem;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+      color: var(--navy);
+      background: var(--mint);
+      font-size: 0.92rem;
+      font-weight: 800;
       text-decoration: none;
     }
 
     .button:hover {
-      background-color: #345b88;
+      color: var(--navy);
+      background: white;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 3rem));
+      margin: -2.8rem auto 0;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(250px, 0.75fr);
+      gap: clamp(1.5rem, 4vw, 4rem);
+      align-items: start;
+      margin-bottom: 5.5rem;
+      padding: clamp(2rem, 5vw, 4rem);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .section-label {
+      margin-bottom: 0.65rem;
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    h3 {
+      margin-bottom: 0.45rem;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .intro-copy p:last-child,
+    .theme-card p:last-child,
+    .entry p:last-child,
+    .publication p:last-child {
+      margin-bottom: 0;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fact-list li {
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .fact-list li:first-child {
+      border-top: 3px solid var(--sun);
+    }
+
+    .fact-list span {
+      display: block;
+      margin-bottom: 0.1rem;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .fact-list strong {
+      font-size: 0.98rem;
+    }
+
+    section {
+      margin-bottom: 6rem;
+      scroll-margin-top: 1.5rem;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading p:last-child {
+      max-width: 620px;
+      margin-bottom: 0.4rem;
+      color: var(--muted);
+    }
+
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .theme-card {
+      min-height: 205px;
+      padding: 1.65rem;
+      border-top: 4px solid var(--teal);
+      background: var(--paper);
+      box-shadow: 0 8px 24px rgba(23, 36, 51, 0.05);
+    }
+
+    .theme-card:nth-child(2) {
+      border-top-color: var(--sun);
+    }
+
+    .theme-card:nth-child(3) {
+      border-top-color: #6a7797;
+    }
+
+    .theme-number {
+      display: block;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 0.32rem 0.66rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .publication-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .publication {
+      min-height: 185px;
+      padding: 1.7rem;
+      background: var(--paper);
+    }
+
+    .publication .year {
+      display: block;
+      margin-bottom: 1.5rem;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+    }
+
+    .publication h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .publication p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .publication cite {
+      font-style: italic;
+    }
+
+    .background-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 6rem);
+    }
+
+    .background-grid > div + div {
+      padding-left: clamp(2rem, 6vw, 6rem);
+      border-left: 1px solid var(--line);
+    }
+
+    .entry {
+      position: relative;
+      padding: 0 0 1.8rem 1.4rem;
+      border-left: 1px solid var(--line);
+    }
+
+    .entry::before {
+      position: absolute;
+      top: 0.35rem;
+      left: -0.32rem;
+      width: 0.56rem;
+      height: 0.56rem;
+      border-radius: 50%;
+      background: var(--teal);
+      content: "";
+    }
+
+    .entry:last-child {
+      padding-bottom: 0;
+    }
+
+    .entry .date,
+    .entry .place {
+      display: block;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .entry .date {
+      margin-bottom: 0.25rem;
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .award-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .award-list li {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      background: rgba(255, 254, 251, 0.65);
+    }
+
+    .award-list span {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      color: white;
+      background: var(--teal);
+    }
+
+    .contact .section-label {
+      color: var(--mint);
+    }
+
+    .contact h2 {
+      margin-bottom: 0.55rem;
+    }
+
+    .contact p:last-child {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .contact .button {
+      justify-content: center;
+      min-width: 155px;
+      color: var(--teal);
+      background: white;
+    }
+
+    .contact .button:hover {
+      color: var(--navy);
+      background: var(--mint);
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
+      width: min(1120px, calc(100% - 3rem));
+      margin: 0 auto;
+      padding: 0 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 650px) {
-      .profile {
+    @media (max-width: 800px) {
+      .header-inner {
+        padding-bottom: 5rem;
+      }
+
+      .hero {
+        padding-top: 5rem;
+      }
+
+      .intro,
+      .section-heading,
+      .background-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .background-grid > div + div {
+        padding-top: 2rem;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .themes,
+      .award-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .header-inner,
+      main,
+      footer {
+        width: min(100% - 2rem, 1120px);
+      }
+
+      .topbar {
+        align-items: flex-start;
         flex-direction: column;
-        text-align: center;
       }
 
-      header h1 {
-        font-size: 34px;
+      .topbar nav {
+        justify-content: flex-start;
+        gap: 0.65rem 1rem;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 5px 8px;
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      main {
+        margin-top: -1.5rem;
+      }
+
+      section {
+        margin-bottom: 4rem;
+      }
+
+      .publication-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .contact .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-  <header>
-    <h1>Jihee Han</h1>
-    <p>Clinical Epidemiologist | Thrombosis Researcher</p>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="topbar">
+        <p class="monogram">JH / Research</p>
+        <nav aria-label="Primary navigation">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#background">Background</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="hero">
+        <p class="eyebrow">Clinical epidemiology · thrombosis research</p>
+        <h1>Jihee Han, PhD</h1>
+        <p class="hero-summary">
+          I study the occurrence, prognosis, and treatment of venous thromboembolism through large-scale real-world and molecular data.
+        </p>
+        <a class="button" href="#research">Explore my research <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main id="content">
+    <section class="intro" aria-labelledby="about-heading">
+      <div class="intro-copy">
+        <p class="section-label">About</p>
+        <h2 id="about-heading">Connecting population health with molecular insight.</h2>
+        <p>
+          I am a postdoctoral researcher in Clinical Epidemiology at Leiden University Medical Center. My work brings together clinical, genetic, and population-level data to better understand thrombosis and cardiometabolic disease.
+        </p>
+        <p>
+          I aim to develop an independent research programme that clarifies how hypercoagulability arises, whom it affects, and how this knowledge can improve prevention and prognosis across different clinical settings.
+        </p>
+      </div>
 
-  <main>
+      <ul class="fact-list" aria-label="Professional summary">
+        <li>
+          <span>Based at</span>
+          <strong>Leiden University Medical Center</strong>
+        </li>
+        <li>
+          <span>Discipline</span>
+          <strong>Clinical Epidemiology</strong>
+        </li>
+        <li>
+          <span>Current focus</span>
+          <strong>Hemostasis &amp; cardiometabolic disease</strong>
+        </li>
+      </ul>
+    </section>
 
-    <section id="about">
-      <div class="profile">
-
-        <!-- 프로필 사진을 올린 후 아래 주석을 제거하세요.
-        <img src="profile.jpg" alt="Profile photograph of Jihee Han">
-        -->
-
+    <section id="research" aria-labelledby="research-heading">
+      <div class="section-heading">
         <div>
-          <h2>About Me</h2>
-
-          <p>
-            I am a postdoctoral researcher in Clinical Epidemiology at
-            Leiden University Medical Center. My research focuses on venous
-            thromboembolism, hypercoagulability, cardiometabolic disease,
-            and the use of real-world healthcare data.
-          </p>
-
-          <p>
-            I am particularly interested in understanding how clinical,
-            genetic, and population-level factors contribute to thrombosis
-            risk and prognosis.
-          </p>
-
-          <!-- CV 파일을 올린 뒤 사용할 수 있습니다. -->
-          <a class="button" href="Jihee_Han_CV.pdf">Download CV</a>
+          <p class="section-label">Research</p>
+          <h2 id="research-heading">Questions that guide my work.</h2>
         </div>
+        <p>
+          I investigate determinants and dysregulation of hemostatic factors using large-scale clinical, genetic, and omics data.
+        </p>
+      </div>
 
+      <div class="themes">
+        <article class="theme-card">
+          <span class="theme-number">01</span>
+          <h3>Venous thromboembolism</h3>
+          <p>Understanding risk factors, prognosis, and variation in venous thromboembolism across populations and care settings.</p>
+        </article>
+        <article class="theme-card">
+          <span class="theme-number">02</span>
+          <h3>Hemostasis &amp; omics</h3>
+          <p>Mapping genetic, proteomic, and metabolic pathways that influence coagulation and hypercoagulability.</p>
+        </article>
+        <article class="theme-card">
+          <span class="theme-number">03</span>
+          <h3>Cardiometabolic health</h3>
+          <p>Examining how coagulation, lifestyle, and molecular mechanisms relate to metabolic and cardiovascular outcomes.</p>
+        </article>
+      </div>
+
+      <ul class="tag-list" aria-label="Research methods and data">
+        <li>Real-world healthcare data</li>
+        <li>Cohort &amp; registry studies</li>
+        <li>Genetic epidemiology</li>
+        <li>Multi-omics</li>
+        <li>Risk prediction</li>
+      </ul>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Selected publications</p>
+          <h2 id="publications-heading">Recent work.</h2>
+        </div>
+        <p>Selected peer-reviewed publications from my curriculum vitae.</p>
+      </div>
+
+      <div class="publication-list">
+        <article class="publication">
+          <span class="year">2025</span>
+          <h3>Genome-wide identification of loci associated with plasma coagulation factor IX activity.</h3>
+          <p>Han J, ten Cate V, Li-Gao R, et al. <cite>Journal of Thrombosis and Haemostasis</cite>.</p>
+        </article>
+        <article class="publication">
+          <span class="year">2024</span>
+          <h3>Coagulation parameters, thrombin generation potential, and incidence of type 2 diabetes.</h3>
+          <p>Han J, van Hylckama Vlieg A, de Mutsert R, et al. <cite>European Journal of Epidemiology</cite>.</p>
+        </article>
+        <article class="publication">
+          <span class="year">2024</span>
+          <h3>Venous thromboembolism-associated genetic variants, coagulation factor levels, and thrombin generation potential.</h3>
+          <p>Han J, Li-Gao R, de Mutsert R, et al. <cite>EJHaem</cite>.</p>
+        </article>
+        <article class="publication">
+          <span class="year">2023</span>
+          <h3>Genomic science of risk prediction for venous thromboembolic disease.</h3>
+          <p>Han J, van Hylckama Vlieg A, Rosendaal FR. <cite>Journal of Thrombosis and Haemostasis</cite>.</p>
+        </article>
       </div>
     </section>
 
-    <section id="research">
-      <h2>Research</h2>
+    <section id="background" aria-labelledby="background-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Background</p>
+          <h2 id="background-heading">Experience &amp; education.</h2>
+        </div>
+        <p>A multidisciplinary foundation spanning clinical epidemiology, nutrition, genetics, and biotechnology.</p>
+      </div>
 
-      <h3>Venous Thromboembolism</h3>
-      <p>
-        Epidemiology, risk factors, prognosis, and international comparisons
-        of venous thromboembolism using cohort and registry data.
-      </p>
+      <div class="background-grid">
+        <div>
+          <h3>Professional experience</h3>
+          <article class="entry">
+            <span class="date">2025–present</span>
+            <h3>Postdoctoral Researcher Fellow</h3>
+            <span class="place">Clinical Epidemiology, Leiden University Medical Center · Leiden, the Netherlands</span>
+            <p>Investigating determinants and dysregulation of hemostatic factors in cardiometabolic diseases using clinical and omics data.</p>
+          </article>
+          <article class="entry">
+            <span class="date">2016–2021</span>
+            <h3>Researcher</h3>
+            <span class="place">Nutrition, epigenetics &amp; biotechnology · Seoul, Korea</span>
+            <p>Research across infectious disease, personalised nutrition, and epigenetic mechanisms in cancer and cardiometabolic disease.</p>
+          </article>
+        </div>
 
-      <h3>Real-World Healthcare Data</h3>
-      <p>
-        Validation and application of routinely collected healthcare data
-        for clinical and pharmacoepidemiological research.
-      </p>
-
-      <h3>Hypercoagulability and Cardiometabolic Disease</h3>
-      <p>
-        Investigation of coagulation pathways and their relationships with
-        metabolic and cardiovascular outcomes.
-      </p>
+        <div>
+          <h3>Education</h3>
+          <article class="entry">
+            <span class="date">2025</span>
+            <h3>PhD in Clinical Epidemiology</h3>
+            <span class="place">Leiden University Medical Center · Leiden, the Netherlands</span>
+            <p>Thesis: <em>Understanding hypercoagulability: determinants and impact on cardiometabolic disease</em>.</p>
+          </article>
+          <article class="entry">
+            <span class="date">2018</span>
+            <h3>MS in Nutritional Science &amp; Food Management</h3>
+            <span class="place">Ewha Womans University · Seoul, Korea</span>
+          </article>
+          <article class="entry">
+            <span class="date">2016</span>
+            <h3>BS in Nutritional Science &amp; Food Management</h3>
+            <span class="place">Ewha Womans University · Seoul, Korea</span>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="publications">
-      <h2>Selected Publications</h2>
+    <section aria-labelledby="awards-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Recognition</p>
+          <h2 id="awards-heading">Awards &amp; honours.</h2>
+        </div>
+        <p>Recognition for research in thrombosis and hemostasis.</p>
+      </div>
 
-      <p>
-        Selected publications will be added here.
-      </p>
-
-      <p>
-        You can also link your
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          Google Scholar profile
-        </a>,
-        ORCID, or institutional profile.
-      </p>
+      <ul class="award-list">
+        <li>
+          <span>2023</span>
+          Prix d’Honneur de la Jeunesse<br>
+          European Congress on Thrombosis and Haemostasis
+        </li>
+        <li>
+          <span>2023</span>
+          Early Career Award<br>
+          International Society on Thrombosis and Haemostasis
+        </li>
+        <li>
+          <span>2023</span>
+          Award for Scientific Excellence<br>
+          Dutch Association for Thrombosis and Hemostasis
+        </li>
+      </ul>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-
-      <p>
-        Department of Clinical Epidemiology<br>
-        Leiden University Medical Center<br>
-        Leiden, the Netherlands
-      </p>
-
-      <p>
-        Email:
-        <a href="mailto:your-email@example.com">
-          your-email@example.com
-        </a>
-      </p>
-
-      <p>
-        <a href="#" target="_blank" rel="noopener noreferrer">ORCID</a>
-        &nbsp;|&nbsp;
-        <a href="#" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        &nbsp;|&nbsp;
-        <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 id="contact-heading">Let’s connect.</h2>
+        <p>For research-related correspondence, please get in touch by email.</p>
+      </div>
+      <a class="button" href="mailto:j.han@lumc.nl">Email Jihee <span aria-hidden="true">↗</span></a>
     </section>
-
   </main>
 
   <footer>
-    © 2026 Jihee Han
+    © 2026 Jihee Han · Leiden University Medical Center
   </footer>
-
 </body>
 </html>
