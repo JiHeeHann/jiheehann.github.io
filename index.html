@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Jihee Han, PhD — clinical epidemiologist and thrombosis researcher at Leiden University Medical Center.">
   <title>Jihee Han, PhD | Clinical Epidemiology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ink: #172433;
+      --ink: #1c2735;
       --muted: #627080;
-      --line: #dce4ea;
-      --canvas: #ffffff;
-      --soft: #f6f8fa;
-      --navy: #174d79;
-      --navy-dark: #123c60;
-      --accent: #c9772c;
-      --accent-soft: #fff4e8;
+      --line: #dce3e8;
+      --canvas: #fdfcfa;
+      --soft: #f7f3f4;
+      --navy: #193b5a;
+      --navy-dark: #102b45;
+      --wine: #6e2039;
+      --wine-soft: #faeff2;
+      --green: #1a4b42;
+      --plum: #3b2a4f;
       --max-width: 1120px;
     }
 
@@ -32,7 +37,7 @@
       margin: 0;
       color: var(--ink);
       background: var(--canvas);
-      font-family: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: "DM Sans", "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.65;
     }
@@ -43,11 +48,11 @@
     }
 
     a:hover {
-      color: var(--accent);
+      color: var(--wine);
     }
 
     a:focus-visible {
-      outline: 3px solid var(--accent);
+      outline: 3px solid var(--wine);
       outline-offset: 3px;
     }
 
@@ -62,7 +67,7 @@
     h2,
     h3 {
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
       font-weight: 400;
     }
 
@@ -104,7 +109,7 @@
 
     .wordmark {
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: -0.01em;
@@ -113,7 +118,7 @@
     }
 
     .wordmark span {
-      color: var(--navy);
+      color: var(--wine);
     }
 
     .nav-links {
@@ -145,14 +150,14 @@
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--line);
-      background: var(--canvas);
+      background: #fffefd;
     }
 
     .hero::before,
     .hero::after {
       position: absolute;
       right: -10rem;
-      border: 1px solid #d8e6ef;
+      border: 1px solid #d8e1ea;
       border-radius: 50%;
       content: "";
       pointer-events: none;
@@ -169,7 +174,7 @@
       right: -3rem;
       width: 17rem;
       height: 17rem;
-      border-color: #f1ddc7;
+      border-color: #ead4dc;
     }
 
     .hero-content {
@@ -182,7 +187,7 @@
     .eyebrow,
     .section-kicker {
       margin-bottom: 0.8rem;
-      color: var(--navy);
+      color: var(--green);
       font-size: 0.74rem;
       font-weight: 800;
       letter-spacing: 0.14em;
@@ -190,7 +195,7 @@
     }
 
     .eyebrow {
-      color: var(--accent);
+      color: var(--wine);
     }
 
     h1 {
@@ -233,19 +238,20 @@
     }
 
     .button:hover {
-      border-color: var(--navy-dark);
+      border-color: var(--wine);
       color: white;
-      background: var(--navy-dark);
+      background: var(--wine);
     }
 
     .button.secondary {
-      color: var(--navy);
+      border-color: var(--wine);
+      color: var(--wine);
       background: white;
     }
 
     .button.secondary:hover {
-      color: var(--navy-dark);
-      background: #f1f7fb;
+      color: var(--wine);
+      background: var(--wine-soft);
     }
 
     main {
@@ -279,7 +285,7 @@
       height: 0.22rem;
       margin-bottom: 0.9rem;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--wine);
       content: "";
     }
 
@@ -336,7 +342,7 @@
     .date {
       display: block;
       margin-bottom: 0.12rem;
-      color: var(--navy);
+      color: var(--green);
       font-size: 0.77rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -363,16 +369,28 @@
       transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
     }
 
+    .research-card:nth-child(1) {
+      border-top: 3px solid var(--navy);
+    }
+
+    .research-card:nth-child(2) {
+      border-top: 3px solid var(--wine);
+    }
+
+    .research-card:nth-child(3) {
+      border-top: 3px solid var(--green);
+    }
+
     .research-card:hover {
-      border-color: #9ab8ce;
-      box-shadow: 0 8px 20px rgba(23, 77, 121, 0.08);
+      border-color: #b8c8d6;
+      box-shadow: 0 8px 20px rgba(25, 59, 90, 0.08);
       transform: translateY(-2px);
     }
 
     .research-number {
       display: block;
       margin-bottom: 2rem;
-      color: var(--accent);
+      color: var(--wine);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.11em;
@@ -388,6 +406,10 @@
       margin-bottom: 0;
       color: var(--muted);
       font-size: 0.93rem;
+    }
+
+    .research-card:nth-child(3) .research-number {
+      color: var(--green);
     }
 
     .method-list {
@@ -522,7 +544,7 @@
     .awards-list time {
       display: block;
       margin-bottom: 0.5rem;
-      color: var(--accent);
+      color: var(--wine);
       font-size: 0.8rem;
       font-weight: 800;
     }
@@ -533,12 +555,14 @@
       gap: 2rem;
       align-items: center;
       padding: clamp(2rem, 5vw, 3.5rem);
-      border: 1px solid #cbdce8;
-      background: #f1f7fb;
+      border: 1px solid var(--green);
+      color: white;
+      background: var(--green);
     }
 
     .contact-panel h2 {
       margin-bottom: 0.5rem;
+      color: white;
       font-size: clamp(2rem, 4vw, 2.8rem);
       letter-spacing: -0.04em;
     }
@@ -546,12 +570,28 @@
     .contact-panel p:last-child {
       max-width: 620px;
       margin-bottom: 0;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .contact-panel .section-kicker {
+      color: #f2cbd6;
+    }
+
+    .contact-panel .button {
+      border-color: white;
+      color: var(--green);
+      background: white;
+    }
+
+    .contact-panel .button:hover {
+      border-color: #f2cbd6;
+      color: white;
+      background: var(--wine);
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      background: var(--soft);
+      border-top: 0;
+      background: var(--plum);
     }
 
     .footer-content {
@@ -560,7 +600,7 @@
       justify-content: space-between;
       gap: 0.5rem 2rem;
       padding: 1.6rem 0;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.74);
       font-size: 0.8rem;
     }
 
@@ -907,5 +947,5 @@
     </div>
   </footer>
 </body>
-  
+
 </html>
