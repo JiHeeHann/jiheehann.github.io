@@ -431,63 +431,10 @@
       font-size: 0.92rem;
     }
 
-    /* Selected research */
     .tinted-section {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: #f0ece5;
-    }
-
-    .project-list {
-      border-top: 1px solid var(--border);
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: minmax(80px, 0.24fr) minmax(0, 1fr) minmax(170px, 0.35fr);
-      gap: 1.5rem;
-      align-items: start;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project-number {
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-    }
-
-    .project h3 {
-      margin-bottom: 0.6rem;
-      font-size: clamp(1.55rem, 3vw, 2.25rem);
-      letter-spacing: -0.045em;
-      line-height: 1.08;
-    }
-
-    .project p {
-      max-width: 650px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: flex-start;
-      gap: 0.4rem 0.8rem;
-      margin: 0;
-      padding: 0.1rem 0 0;
-      list-style: none;
-    }
-
-    .project-tags li {
-      color: var(--accent);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
     }
 
     /* Publications */
@@ -553,57 +500,6 @@
 
     .publication cite {
       font-style: italic;
-    }
-
-    /* Current work */
-    .current-work {
-      display: grid;
-      grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
-      gap: clamp(2rem, 7vw, 7rem);
-      padding-top: clamp(4.5rem, 8vw, 7rem);
-      border-top: 1px solid var(--border);
-    }
-
-    .current-work h2 {
-      margin-bottom: 1rem;
-      font-size: clamp(2.5rem, 5vw, 4.25rem);
-      letter-spacing: -0.065em;
-      line-height: 0.98;
-    }
-
-    .current-work > div > p:last-child {
-      max-width: 320px;
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .work-list {
-      margin: 0;
-      padding: 0;
-      border-top: 1px solid var(--border);
-      list-style: none;
-    }
-
-    .work-list li {
-      display: grid;
-      grid-template-columns: minmax(180px, 0.6fr) minmax(0, 1.4fr);
-      gap: 1.5rem;
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .work-list h3 {
-      margin-bottom: 0;
-      font-family: var(--sans);
-      font-size: 0.94rem;
-      font-weight: 600;
-      line-height: 1.45;
-    }
-
-    .work-list p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
     }
 
     /* About and CV */
@@ -863,8 +759,7 @@
         min-height: 260px;
       }
 
-      .section-header,
-      .current-work {
+      .section-header {
         grid-template-columns: 1fr;
         gap: 1rem;
       }
@@ -893,24 +788,12 @@
         margin-bottom: 1.5rem;
       }
 
-      .project {
-        grid-template-columns: 5rem minmax(0, 1fr);
-      }
-
-      .project-tags {
-        grid-column: 2;
-      }
-
       .publication {
         grid-template-columns: 5.5rem minmax(0, 1fr);
       }
 
       .publication p {
         grid-column: 2;
-      }
-
-      .current-work {
-        padding-top: clamp(4.5rem, 8vw, 7rem);
       }
 
       .cv-panel {
@@ -954,19 +837,8 @@
 
       .section-header h2,
       .publication-header h2,
-      .current-work h2,
       .about-copy h2 {
         font-size: clamp(2.55rem, 12vw, 3.4rem);
-      }
-
-      .project {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-      }
-
-      .project-tags {
-        grid-column: 1;
-        padding-top: 0.25rem;
       }
 
       .publication-header {
@@ -982,11 +854,6 @@
 
       .publication p {
         grid-column: 1;
-      }
-
-      .work-list li {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
       }
 
       .contact-panel {
@@ -1111,72 +978,6 @@
       </div>
     </section>
 
-    <section class="tinted-section" aria-labelledby="selected-research-heading">
-      <div class="container section">
-        <div class="section-header">
-          <div>
-            <p class="section-label">Selected research</p>
-            <h2 id="selected-research-heading">Questions in focus.</h2>
-          </div>
-          <p class="section-intro">Current research stories spanning population epidemiology, clinical data, and the biology of coagulation.</p>
-        </div>
-
-        <div class="project-list">
-          <article class="project">
-            <span class="project-number">01</span>
-            <div>
-              <h3>Sleep disturbances and venous thromboembolism</h3>
-              <p>Investigating how sleep behaviours and sleep disorders relate to hemostatic dysregulation and long-term risk of venous thromboembolism.</p>
-            </div>
-            <ul class="project-tags" aria-label="Project topics">
-              <li>Sleep</li>
-              <li>VTE</li>
-              <li>Hemostasis</li>
-              <li>Population epidemiology</li>
-            </ul>
-          </article>
-          <article class="project">
-            <span class="project-number">02</span>
-            <div>
-              <h3>VTE across Korea and the Netherlands</h3>
-              <p>Examining why venous thromboembolism incidence differs across populations and which demographic, clinical, and diagnostic factors may explain changing incidence patterns.</p>
-            </div>
-            <ul class="project-tags" aria-label="Project topics">
-              <li>VTE incidence</li>
-              <li>International epidemiology</li>
-              <li>Real-world data</li>
-            </ul>
-          </article>
-          <article class="project">
-            <span class="project-number">03</span>
-            <div>
-              <h3>Real-world identification of venous thromboembolism</h3>
-              <p>Evaluating how reliably venous thromboembolism can be identified across routinely collected healthcare databases and electronic health records.</p>
-            </div>
-            <ul class="project-tags" aria-label="Project topics">
-              <li>Validation</li>
-              <li>EHR</li>
-              <li>Healthcare databases</li>
-              <li>Phenotyping</li>
-            </ul>
-          </article>
-          <article class="project">
-            <span class="project-number">04</span>
-            <div>
-              <h3>Anticoagulant effectiveness and safety in real-world populations</h3>
-              <p>Using observational healthcare data and causal inference methods to evaluate anticoagulant treatment strategies in patient populations that are underrepresented in clinical trials.</p>
-            </div>
-            <ul class="project-tags" aria-label="Project topics">
-              <li>DOAC</li>
-              <li>VKA</li>
-              <li>Target trial emulation</li>
-              <li>Causal inference</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section id="publications" class="section container" aria-labelledby="publications-heading">
       <div class="publication-header">
         <div>
@@ -1209,27 +1010,6 @@
         </li>
       </ol>
 
-      <section class="current-work" aria-labelledby="current-work-heading">
-        <div>
-          <p class="section-label">Current work</p>
-          <h2 id="current-work-heading">Work in progress.</h2>
-          <p>Ongoing questions that keep the portfolio active and connected to clinical practice.</p>
-        </div>
-        <ol class="work-list">
-          <li>
-            <h3>Korea–Netherlands VTE Epidemiology</h3>
-            <p>Cross-country investigation of temporal trends and population differences in venous thromboembolism.</p>
-          </li>
-          <li>
-            <h3>Real-world VTE Validation</h3>
-            <p>Evaluation of VTE identification across routinely collected healthcare datasets.</p>
-          </li>
-          <li>
-            <h3>Causal inference in anticoagulant treatment</h3>
-            <p>Real-world comparative effectiveness and safety analyses in clinically complex populations.</p>
-          </li>
-        </ol>
-      </section>
     </section>
 
     <section id="about" class="tinted-section" aria-labelledby="about-heading">
