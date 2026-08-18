@@ -167,7 +167,7 @@ h4 {
   grid-template-columns: minmax(0, 1.45fr) minmax(285px, 0.75fr);
   gap: clamp(2.5rem, 7vw, 7rem);
   align-items: end;
-  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0 clamp(4.5rem, 8vw, 6.5rem);
+  padding: clamp(3rem, 4.5vw, 5rem) 0 clamp(4.5rem, 8vw, 6.5rem);
 }
 
 h1 {
@@ -450,17 +450,6 @@ h1 {
   font-size: 0.88rem;
 }
 
-.experience-list .experience-description {
-  grid-column: 1 / -1;
-  display: grid;
-  gap: 0.3rem;
-  margin: 0.1rem 0 0;
-  padding-left: 1.1rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.65;
-}
-
 .publication-section + .publication-section {
   margin-top: clamp(3.5rem, 6vw, 5.5rem);
 }
@@ -697,11 +686,6 @@ footer {
   .publication-list > li {
     grid-template-columns: 1fr;
     gap: 0.45rem;
-  }
-
-  .experience-list .experience-description {
-    grid-column: auto;
-    margin-top: 0.25rem;
   }
 
   .contact-panel {
