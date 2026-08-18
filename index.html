@@ -502,49 +502,39 @@
       font-style: italic;
     }
 
-    /* About and CV */
-    .about-grid {
+    /* Background and CV */
+    .records-header {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: clamp(2.5rem, 8vw, 8rem);
+      grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 3rem;
     }
 
-    .about-copy h2 {
-      max-width: 680px;
-      margin-bottom: 1.45rem;
+    .records-header h2 {
+      margin-bottom: 0;
       font-size: clamp(2.5rem, 5vw, 4.25rem);
       letter-spacing: -0.065em;
       line-height: 0.98;
     }
 
-    .about-copy .lead {
-      max-width: 675px;
-      margin-bottom: 1.25rem;
-      font-family: var(--serif);
-      font-size: clamp(1.25rem, 2.4vw, 1.7rem);
-      line-height: 1.42;
-    }
-
-    .about-copy p:not(.section-label):not(.lead) {
-      max-width: 680px;
+    .records-intro {
+      max-width: 625px;
+      margin: 0 0 0.2rem;
       color: var(--muted);
     }
 
-    .bio-link {
-      display: inline-block;
-      margin-top: 0.4rem;
-      color: var(--accent);
-      font-size: 0.88rem;
-      font-weight: 600;
+    .records-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(1.5rem, 4vw, 3.5rem);
     }
 
-    .bio-details {
-      margin-top: 3rem;
-      padding-top: 1.3rem;
-      border-top: 1px solid var(--border);
+    .record-group {
+      min-width: 0;
     }
 
-    .bio-details h3 {
+    .record-group > h3 {
       margin-bottom: 1rem;
       font-family: var(--sans);
       font-size: 0.76rem;
@@ -553,25 +543,21 @@
       text-transform: uppercase;
     }
 
-    .bio-details p:last-child {
-      margin-bottom: 0;
-    }
-
-    .fact-list {
+    .record-list {
       margin: 0;
       padding: 0;
       border-top: 1px solid var(--border);
       list-style: none;
     }
 
-    .fact-list li {
-      padding: 1.25rem 0;
+    .record-list li {
+      padding: 1.3rem 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .fact-list span {
+    .record-date {
       display: block;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.4rem;
       color: var(--accent);
       font-size: 0.72rem;
       font-weight: 700;
@@ -579,11 +565,24 @@
       text-transform: uppercase;
     }
 
-    .fact-list strong {
-      display: block;
-      font-size: 0.94rem;
+    .record-list h4 {
+      margin: 0 0 0.3rem;
+      font-size: 0.98rem;
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.45;
+    }
+
+    .record-place,
+    .record-list p {
+      display: block;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .record-list p {
+      margin-top: 0.55rem;
     }
 
     .cv-panel {
@@ -746,7 +745,6 @@
       }
 
       .hero-grid,
-      .about-grid,
       .contact-panel {
         grid-template-columns: 1fr;
       }
@@ -799,6 +797,21 @@
       .cv-panel {
         grid-template-columns: 1fr;
       }
+
+      .records-header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2.2rem;
+      }
+
+      .records-intro {
+        margin-top: 0.5rem;
+      }
+
+      .records-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
     }
 
     @media (max-width: 560px) {
@@ -837,7 +850,7 @@
 
       .section-header h2,
       .publication-header h2,
-      .about-copy h2 {
+      .records-header h2 {
         font-size: clamp(2.55rem, 12vw, 3.4rem);
       }
 
@@ -891,7 +904,7 @@
         <ul>
           <li><a href="#research">Research</a></li>
           <li><a href="#publications">Publications</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">Background</a></li>
           <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -903,7 +916,7 @@
           <ul>
             <li><a href="#research">Research</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">Background</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -917,7 +930,7 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Clinical epidemiologist</p>
-          <h1 id="page-title">Jihee Han</h1>
+          <h1 id="page-title">Jihee Han, Ph.D.</h1>
           <p class="hero-statement">Understanding venous thrombosis through real-world data, epidemiology, and population health.</p>
           <p>
             I study why venous thromboembolism occurs, how its burden differs across populations, and how real-world healthcare data can improve prevention and care.
@@ -989,23 +1002,23 @@
 
       <ol class="publication-list">
         <li class="publication">
-          <time datetime="2025">2025</time>
-          <h3>Genome-wide identification of loci associated with plasma coagulation factor IX activity.</h3>
+          <time datetime="2026">2026</time>
+          <h3><a href="https://www.jthjournal.org/article/S1538-7836%2825%2900668-3/abstract" target="_blank" rel="noopener noreferrer">Genome-wide identification of loci associated with plasma coagulation factor IX activity.</a></h3>
           <p><cite>Journal of Thrombosis and Haemostasis</cite></p>
         </li>
         <li class="publication">
           <time datetime="2024">2024</time>
-          <h3>Associations of coagulation parameters and thrombin generation potential with the incidence of type 2 diabetes: mediating role of glycoprotein acetylation.</h3>
+          <h3><a href="https://link.springer.com/article/10.1007/s10654-024-01162-0" target="_blank" rel="noopener noreferrer">Associations of coagulation parameters and thrombin generation potential with the incidence of type 2 diabetes: mediating role of glycoprotein acetylation.</a></h3>
           <p><cite>European Journal of Epidemiology</cite></p>
         </li>
         <li class="publication">
           <time datetime="2024">2024</time>
-          <h3>Association between venous thromboembolism-associated genetic variants, coagulation factor levels, and thrombin generation potential.</h3>
+          <h3><a href="https://onlinelibrary.wiley.com/doi/10.1002/jha2.863" target="_blank" rel="noopener noreferrer">Association between venous thromboembolism-associated genetic variants, coagulation factor levels, and thrombin generation potential.</a></h3>
           <p><cite>EJHaem</cite></p>
         </li>
         <li class="publication">
           <time datetime="2023">2023</time>
-          <h3>Genomic science of risk prediction for venous thromboembolic disease: convenient clarification or compounding complexity.</h3>
+          <h3><a href="https://www.jthjournal.org/article/S1538-7836%2823%2900704-3/fulltext" target="_blank" rel="noopener noreferrer">Genomic science of risk prediction for venous thromboembolic disease: convenient clarification or compounding complexity.</a></h3>
           <p><cite>Journal of Thrombosis and Haemostasis</cite></p>
         </li>
       </ol>
@@ -1013,38 +1026,77 @@
     </section>
 
     <section id="about" class="tinted-section" aria-labelledby="about-heading">
-      <div class="container section about-grid">
-        <div class="about-copy">
-          <p class="section-label">About</p>
-          <h2 id="about-heading">Clinical evidence, seen at population scale.</h2>
-          <p class="lead">Jihee Han is a clinical epidemiologist working at the intersection of venous thrombosis, real-world evidence, and population health.</p>
-          <p>
-            Her research combines large-scale healthcare databases, prospective cohorts, genetic and biomarker data, and modern epidemiological methods to understand why thrombotic disease occurs and how clinical evidence can be improved.
-          </p>
-          <a class="bio-link" href="#about-details">Read full bio →</a>
-
-          <div id="about-details" class="bio-details">
-            <h3>Background</h3>
-            <p>
-              She is a postdoctoral researcher in Clinical Epidemiology at Leiden University Medical Center. Her work builds on training in clinical epidemiology, nutritional science, genetics, and biotechnology.
-            </p>
+      <div class="container section">
+        <div class="records-header">
+          <div>
+            <p class="section-label">Background</p>
+            <h2 id="about-heading">Affiliation, education &amp; recognition.</h2>
           </div>
+          <p class="records-intro">A complete view of my current and previous research appointments, academic training, and research honours.</p>
         </div>
 
-        <ul class="fact-list" aria-label="Academic background">
-          <li>
-            <span>Affiliation</span>
-            <strong>Department of Clinical Epidemiology<br>Leiden University Medical Center</strong>
-          </li>
-          <li>
-            <span>Education</span>
-            <strong>PhD in Clinical Epidemiology<br>Leiden University Medical Center, 2025</strong>
-          </li>
-          <li>
-            <span>Recognition</span>
-            <strong>Prix d’Honneur de la Jeunesse, Early Career Award, and Award for Scientific Excellence (2023)</strong>
-          </li>
-        </ul>
+        <div class="records-grid">
+          <section class="record-group" aria-labelledby="affiliations-heading">
+            <h3 id="affiliations-heading">Affiliations &amp; appointments</h3>
+            <ol class="record-list">
+              <li>
+                <span class="record-date">2025–present</span>
+                <h4>Postdoctoral Researcher Fellow</h4>
+                <span class="record-place">Department of Clinical Epidemiology · Leiden University Medical Center · Leiden, the Netherlands</span>
+                <p>Investigating determinants and dysregulation of hemostatic factors in cardiometabolic disease using clinical and omics data.</p>
+              </li>
+              <li>
+                <span class="record-date">2016–2021</span>
+                <h4>Researcher</h4>
+                <span class="record-place">Nutrition, epigenetics &amp; biotechnology · Seoul, Korea</span>
+                <p>Research spanning infectious disease, personalised nutrition, and epigenetic mechanisms in cancer and cardiometabolic disease.</p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="record-group" aria-labelledby="education-heading">
+            <h3 id="education-heading">Education</h3>
+            <ol class="record-list">
+              <li>
+                <span class="record-date">2025</span>
+                <h4>PhD in Clinical Epidemiology</h4>
+                <span class="record-place">Leiden University Medical Center · Leiden, the Netherlands</span>
+                <p>Thesis: <em>Understanding hypercoagulability: determinants and impact on cardiometabolic disease</em>.</p>
+              </li>
+              <li>
+                <span class="record-date">2018</span>
+                <h4>MS in Nutritional Science &amp; Food Management</h4>
+                <span class="record-place">Ewha Womans University · Seoul, Korea</span>
+              </li>
+              <li>
+                <span class="record-date">2016</span>
+                <h4>BS in Nutritional Science &amp; Food Management</h4>
+                <span class="record-place">Ewha Womans University · Seoul, Korea</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="record-group" aria-labelledby="awards-heading">
+            <h3 id="awards-heading">Awards &amp; honours</h3>
+            <ol class="record-list">
+              <li>
+                <span class="record-date">2023</span>
+                <h4>Prix d’Honneur de la Jeunesse</h4>
+                <span class="record-place">European Congress on Thrombosis and Haemostasis</span>
+              </li>
+              <li>
+                <span class="record-date">2023</span>
+                <h4>Early Career Award</h4>
+                <span class="record-place">International Society on Thrombosis and Haemostasis</span>
+              </li>
+              <li>
+                <span class="record-date">2023</span>
+                <h4>Award for Scientific Excellence</h4>
+                <span class="record-place">Dutch Association for Thrombosis and Hemostasis</span>
+              </li>
+            </ol>
+          </section>
+        </div>
       </div>
     </section>
 
