@@ -358,6 +358,10 @@ h1 {
   border-right: 1px solid var(--line);
 }
 
+.methods-grid .focus-card {
+  min-height: 285px;
+}
+
 .focus-card + .focus-card {
   padding-left: 1.5rem;
 }
@@ -766,6 +770,10 @@ footer {
     padding: 1.5rem 0;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .methods-grid .focus-card {
+    min-height: 0;
   }
 
   .focus-number {
