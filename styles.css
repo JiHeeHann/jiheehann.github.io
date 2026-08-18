@@ -1,14 +1,14 @@
 :root {
-  --bg: #f6f3ed;
-  --surface: #fffdf9;
-  --surface-muted: #ece7de;
-  --ink: #18211f;
-  --muted: #65706b;
-  --line: #d4cec2;
-  --forest: #17473e;
-  --forest-dark: #10372f;
-  --clay: #a54834;
-  --clay-soft: #f3dfd9;
+  --bg: #f7f5f0;
+  --surface: #fcfbf8;
+  --surface-muted: #f0ece5;
+  --ink: #171717;
+  --muted: #68625d;
+  --line: #d9d4cc;
+  --forest: #7a263a;
+  --forest-dark: #5f1c2d;
+  --clay: #7a263a;
+  --clay-soft: #f1e4e7;
   --max-width: 1160px;
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -167,7 +167,7 @@ h4 {
   grid-template-columns: minmax(0, 1.45fr) minmax(285px, 0.75fr);
   gap: clamp(2.5rem, 7vw, 7rem);
   align-items: end;
-  padding: clamp(4.8rem, 10vw, 8rem) 0 clamp(4.5rem, 8vw, 6.5rem);
+  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0 clamp(4.5rem, 8vw, 6.5rem);
 }
 
 h1 {
@@ -208,7 +208,7 @@ h1 {
   position: absolute;
   top: 1.4rem;
   left: 1.35rem;
-  color: #dfe9df;
+  color: #f3cfd7;
   font-family: var(--serif);
   font-size: clamp(7rem, 14vw, 11rem);
   letter-spacing: -0.13em;
@@ -295,6 +295,10 @@ h1 {
   padding: clamp(4.25rem, 8vw, 6.75rem) 0;
 }
 
+.content-start.section {
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+}
+
 .section + .section {
   border-top: 1px solid var(--line);
 }
@@ -316,6 +320,11 @@ h1 {
   font-size: clamp(2.4rem, 5vw, 4.15rem);
   letter-spacing: -0.065em;
   line-height: 0.98;
+}
+
+.section-head.compact {
+  display: block;
+  margin-bottom: 1.75rem;
 }
 
 .section-intro {
@@ -395,7 +404,7 @@ h1 {
   list-style: none;
 }
 
-.record-list li {
+.record-list > li {
   display: grid;
   grid-template-columns: minmax(102px, 0.3fr) minmax(0, 1fr);
   gap: 1rem 1.5rem;
@@ -439,6 +448,17 @@ h1 {
   padding-left: 1.1rem;
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.experience-list .experience-description {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.1rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 .publication-section + .publication-section {
@@ -536,7 +556,7 @@ h1 {
 }
 
 .contact-panel .section-label {
-  color: #eab7a8;
+  color: #f3cfd7;
 }
 
 .contact-panel h2 {
@@ -577,12 +597,12 @@ h1 {
 }
 
 .contact-links a:hover {
-  color: #eab7a8;
+  color: #f3cfd7;
 }
 
 footer {
   color: rgba(255, 255, 255, 0.62);
-  background: #0a2721;
+  background: #32131d;
 }
 
 .footer-content {
@@ -630,6 +650,10 @@ footer {
     margin-bottom: 2.25rem;
   }
 
+  .section-head.compact {
+    margin-bottom: 1.5rem;
+  }
+
   .section-intro {
     margin-top: 0.45rem;
   }
@@ -669,10 +693,15 @@ footer {
     font-size: clamp(2.45rem, 12vw, 3.35rem);
   }
 
-  .record-list li,
-  .publication-list li {
+  .record-list > li,
+  .publication-list > li {
     grid-template-columns: 1fr;
     gap: 0.45rem;
+  }
+
+  .experience-list .experience-description {
+    grid-column: auto;
+    margin-top: 0.25rem;
   }
 
   .contact-panel {
